@@ -36,6 +36,12 @@ It also includes a simple **Tkinter GUI** that allows users to draw digits and g
 
 ---
 
+## ❤️ Clone repo
+Open your terminal and run: 
+```bash
+git clone https://github.com/BAROKHUU/Calculus_II_HCMUT
+```
+
 ## ⚙️ Setup Virtual Environment
 
 ### 1. Create virtual environment
@@ -58,12 +64,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
----
-## Clone repo
-Open your terminal and run: 
-```bash
-git clone https://github.com/BAROKHUU/Calculus_II_HCMUT
-```
 ---
 ## 📦 Installation
 
