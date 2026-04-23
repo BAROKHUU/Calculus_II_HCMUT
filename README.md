@@ -59,7 +59,12 @@ source .venv/bin/activate
 ```
 
 ---
-
+## Clone repo
+Open your terminal and run: 
+```bash
+git clone https://github.com/BAROKHUU/Calculus_II_HCMUT
+```
+---
 ## 📦 Installation
 
 ```bash
