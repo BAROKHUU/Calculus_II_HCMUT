@@ -1,6 +1,7 @@
 import math
 import random
 import numpy as np
+import matplotlib.pyplot as plt
 from keras.datasets import mnist
 
 def load_datasets():
@@ -85,7 +86,32 @@ def accuracy_func(y_true, y_hat):
     return np.mean(y_true == y_hat)
 
 
+def plot_training_history(loss_history, accuracy_history,save_path="result_plot.png"):
+    epochs = range(1, len(loss_history) + 1)
 
+    plt.figure(figsize=(12, 5))
+
+    # Loss plot
+    plt.subplot(1, 2, 1)
+    plt.plot(epochs, loss_history, label="Loss")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.title("Training Loss over Epochs")
+    plt.grid(True)
+    plt.legend()
+
+    # Accuracy plot
+    plt.subplot(1, 2, 2)
+    plt.plot(epochs, accuracy_history, label="Accuracy")
+    plt.xlabel("Epoch")
+    plt.ylabel("Accuracy")
+    plt.title("Training Accuracy over Epochs")
+    plt.grid(True)
+    plt.legend()
+
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=300)
+    plt.show()
 
 #======================
 #3. GRADIENT DESCENT
@@ -123,7 +149,6 @@ def Logistic_Regression_Training(X, y, learning_rate=0.12, epochs = 200):
                   f"Train accuray: {accuracy:.4f}")
             
     return weights, bias, loss_history, accuracy_history
-
 
 
 #======================
@@ -180,14 +205,14 @@ def main():
                                                                                  learning_rate=0.12, 
                                                                                  epochs = 200)
     
+    plot_training_history(loss_history, accuracy_history)
+
     evaluate(X_train, y_train, weights, bias, name="Train", save_path="result.txt")
     evaluate(X_test, y_test, weights, bias, name="Test", save_path="result.txt")
 
     print("\nTRAINING FINISHED!!!")
     print("Final bias = ",bias)
     print("Norm of weights = ", np.linalg.norm(weights))
-
-
 
 if __name__ == "__main__":
     main()
