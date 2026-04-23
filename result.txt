@@ -11,4 +11,17 @@ Accuracy : 0.9991
 TP = 1135
 TN = 978
 FP = 2
+FN = 0====== Train Evaluation ======
+Loss     : 0.0133
+Accuracy : 0.9976
+TP = 6730
+TN = 5905
+FP = 18
+FN = 12
+====== Test Evaluation ======
+Loss     : 0.0091
+Accuracy : 0.9991
+TP = 1135
+TN = 978
+FP = 2
 FN = 0

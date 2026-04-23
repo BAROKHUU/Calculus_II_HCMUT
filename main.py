@@ -114,12 +114,11 @@ def Logistic_Regression_Training(X, y, learning_rate=0.12, epochs = 200):
         y_hat = predict(X, weights, bias)
         accuracy = accuracy_func(y, y_hat)
 
-
         loss_history.append(loss)
         accuracy_history.append(accuracy)
 
         if epoch == 0 or (epoch+1)%10==0:
-            print(f"Epoch {epoch +1:3d}/{epoch} | "
+            print(f"Epoch {epoch +1:3d}/{epochs} | "
                   f"Loss: {loss:.4f} | "
                   f"Train accuray: {accuracy:.4f}")
             
